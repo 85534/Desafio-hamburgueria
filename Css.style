@@ -1,1 +1,254 @@
 
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* LOGO ANIMADA */
+.logo {
+  font-size: 24px;
+  color: #ff3c00;
+  animation: fireGlow 1.5s infinite alternate;
+}
+
+@keyframes fireGlow {
+  from {
+    text-shadow: 0 0 5px #ff3c00, 0 0 10px #ff3c00;
+  }
+  to {
+    text-shadow: 0 0 20px #ff3c00, 0 0 40px #ff0000;
+  }
+}
+
+/* MENU */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* LINHA ANIMADA */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff3c00, #ff0000);
+  left: 0;
+  bottom: -5px;
+  transition: 0.4s;
+}
+
+nav a:hover {
+  color: #ff3c00;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1550547660-d9450f859349') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* OVERLAY ESCURO */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* TEXTO */
+.hero-text {
+  position: relative;
+  text-align: center;
+  animation: slideUp 1.5s ease;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+/* BOTÃO */
+.hero button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: none;
+  background: linear-gradient(45deg, #ff3c00, #ff0000);
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* EFEITO ONDA */
+.hero button::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 300%;
+  background: rgba(255,255,255,0.2);
+  transform: rotate(45deg);
+  top: -100%;
+  left: -50%;
+  transition: 0.5s;
+}
+
+.hero button:hover::before {
+  width: 200%;
+}
+
+.hero button:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMAÇÃO */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= MENU ================= */
+
+.menu {
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.menu h2 {
+  font-size: 32px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  width: 220px;
+  border-radius: 15px;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BRILHO */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, transparent, rgba(255,60,0,0.4));
+  bottom: 0;
+  left: 0;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+}
+
+/* TEXTO */
+.card span {
+  color: #ff3c00;
+  font-weight: bold;
+}
+
+/* ================= SOBRE ================= */
+
+.sobre {
+  padding: 80px 40px;
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+/* ================= CONTATO ================= */
+
+.contato {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: black;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ================= ANIMAÇÕES GERAIS ================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
